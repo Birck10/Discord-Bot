@@ -1,0 +1,29 @@
+# API_REFERENCE.md
+
+## API Reference
+
+### Core Libraries
+
+1. **discord.py**
+   - Used for Discord bot functionality (e.g., sending/receiving messages).
+   - Documentation: [discord.py docs](https://discordpy.readthedocs.io/)
+
+2. **cryptography**
+   - Implements encryption challenges for the confidential puzzle feature.
+   - Documentation: [cryptography docs](https://cryptography.io/en/latest/)
+
+### Key Functions
+
+#### Game Logic (game.py)
+- `generate_random_quest()`
+  - Description: Randomly selects a quest from `quests.json`.
+
+- `start_duel(player1, player2)`
+  - Description: Simulates a PvP duel with random outcomes.
+
+#### Encryption (encryption/puzzles.py)
+- `encrypt_message(message)`
+  - Description: Encrypts a given string for decryption challenges.
+
+- `decrypt_message(encrypted_message)`
+  - Description: Decrypts an encrypted message.
