@@ -1,0 +1,65 @@
+# INSTALL.md
+
+## Installation Guide
+
+### Prerequisites
+To set up Guffal Bot on your server, ensure you meet the following requirements:
+
+1. **Python**: Version 3.8 or higher.
+   - Verify your Python version by running:
+     ```bash
+     python --version
+     ```
+
+2. **Dependencies**:
+   - Install the required Python libraries by running:
+     ```bash
+     pip install -r requirements.txt
+     ```
+
+3. **Discord API Token**:
+   - Create a bot on the [Discord Developer Portal](https://discord.com/developers/applications).
+   - Copy the bot token and save it in `config.json` under the `token` field.
+
+### Local Deployment
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/guffal-bot.git
+   cd guffal-bot
+   ```
+
+2. Configure the bot:
+   - Open `config.json` and add your Discord bot token.
+   - Example `config.json`:
+     ```json
+     {
+         "token": "YOUR_BOT_TOKEN",
+         "prefix": "!"
+     }
+     ```
+
+3. Run the bot:
+   ```bash
+   python bot/main.py
+   ```
+
+4. Invite the bot to your Discord server:
+   - Use the OAuth2 URL Generator in the Developer Portal to create an invite link.
+   - Add the required bot permissions, such as `Read Messages`, `Send Messages`, and `Embed Links`.
+
+### Cloud Deployment (Heroku Example)
+1. Install the Heroku CLI.
+2. Create a new Heroku app:
+   ```bash
+   heroku create
+   ```
+
+3. Deploy the bot:
+   ```bash
+   git push heroku main
+   ```
+
+4. Set your bot token as an environment variable:
+   ```bash
+   heroku config:set DISCORD_TOKEN=YOUR_BOT_TOKEN
+   ```
