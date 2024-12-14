@@ -1,0 +1,25 @@
+# USAGE.md
+
+## Usage Guide
+
+### Commands Overview
+
+#### 🎮 Game Commands
+1. **Start a Quest**: `!quest`
+   - Assigns a random quest to the player with details like title, description, and rewards.
+
+2. **Duel Another Player**: `!duel @username`
+   - Engages in a PvP duel. The winner is chosen randomly.
+
+3. **Check Inventory**: `!inventory`
+   - Displays the player's items (e.g., weapons, potions).
+
+4. **Decrypt a Puzzle**: `!puzzle`
+   - Provides an encrypted message for players to decode.
+
+#### 🛠️ Utility Commands
+1. **Make an Announcement**: `!announce Your message here`
+   - Allows administrators to send announcements.
+
+2. **Help Command**: `!help`
+   - Lists all available commands.
