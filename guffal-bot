@@ -1,0 +1,66 @@
+# Guffal Bot - Core Implementation
+
+## Importing Dependencies
+import discord
+from discord.ext import commands
+import json
+import random
+
+# Load Configurations
+with open('config.json') as config_file:
+    config = json.load(config_file)
+
+TOKEN = config['token']
+PREFIX = config['prefix']
+
+# Initialize Bot
+intents = discord.Intents.default()
+intents.messages = True
+bot = commands.Bot(command_prefix=PREFIX, intents=intents)
+
+# Quest Data Loader
+def load_quests():
+    with open('bot/data/quests.json') as file:
+        return json.load(file)
+
+quests = load_quests()
+
+# Core Commands
+@bot.command(name='quest')
+async def quest(ctx):
+    """Provide a random quest to the player."""
+    quest = random.choice(quests)
+    await ctx.send(f"**Your Quest:** {quest['title']}\n*{quest['description']}*\nReward: {quest['reward']} Veil Coins")
+
+@bot.command(name='inventory')
+async def inventory(ctx):
+    """Display the player's inventory."""
+    # Placeholder for actual inventory system
+    inventory = ['Mystic Sword', 'Potion of Healing']
+    await ctx.send(f"**Your Inventory:** {', '.join(inventory)}")
+
+@bot.command(name='duel')
+async def duel(ctx, opponent: discord.Member):
+    """Engage in a PvP duel with another player."""
+    player_health = 100
+    opponent_health = 100
+
+    winner = random.choice([ctx.author.name, opponent.name])
+    await ctx.send(f"A fierce duel commences between {ctx.author.name} and {opponent.name}!\n...And the winner is **{winner}**!")
+
+# Confidential Puzzle (Encryption Mini-Game)
+@bot.command(name='puzzle')
+async def puzzle(ctx):
+    """Provide an encrypted message for the player to decode."""
+    encrypted_message = "R29vZCBMdWNrIQ=="  # Base64 for "Good Luck!"
+    await ctx.send(f"**Decrypt this message:** {encrypted_message}")
+
+# Admin Commands
+@bot.command(name='announce')
+@commands.has_permissions(administrator=True)
+async def announce(ctx, *, announcement):
+    """Make an announcement to the server."""
+    await ctx.send(f"**Server Announcement:** {announcement}")
+
+# Run Bot
+bot.run(TOKEN)
