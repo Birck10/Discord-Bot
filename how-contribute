@@ -1,0 +1,26 @@
+# CONTRIBUTING.md
+
+## Contributing to Guffal Bot
+
+We welcome contributions to enhance the bot's features and functionality!
+
+### Guidelines
+1. **Fork the Repository**:
+   - Create your feature branch: `git checkout -b feature-name`.
+   - Commit your changes: `git commit -m "Add feature description"`.
+   - Push to your branch: `git push origin feature-name`.
+
+2. **Submit a Pull Request**:
+   - Explain the purpose of your changes.
+   - Reference any relevant issues or feature requests.
+
+3. **Coding Standards**:
+   - Use descriptive variable and function names.
+   - Follow PEP 8 standards for Python code.
+
+4. **Testing**:
+   - Write tests for new features in the `tests/` directory.
+   - Ensure all existing tests pass before submitting your PR.
+
+5. **Community Engagement**:
+   - Discuss significant changes or new features with maintainers via GitHub issues.
